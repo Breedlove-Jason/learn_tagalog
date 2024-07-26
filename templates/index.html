@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagalog Flashcards</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container py-5">
+    <div class="card" onclick="flipCard()">
+        <div class="card-inner">
+            <div class="card-front text-center py-5">
+                <h5 class="card-title">{{ word['Tagalog'] }}</h5>
+            </div>
+            <div class="card-back text-center py-5">
+                <p class="card-text">{{ word['English'] }}</p>
+                <audio id="audioPlayer" src="{{ url_for('static', filename='audio/' ~ word['Tagalog'] ~ '.mp3') }}"></audio>
+                <button class="btn btn-info" onclick="playAudio()">Play Sound</button>
+                <a href="#" class="btn btn-success" onclick="location.href='{{ url_for('next_word', known='true') }}'">Known</a>
+                <a href="#" class="btn btn-danger" onclick="location.href='{{ url_for('next_word', known='false') }}'">Next Card</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

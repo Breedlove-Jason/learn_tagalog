@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complete</title>
+</head>
+<body>
+<h1>All Done!</h1>
+<p>You have learned the following words:</p>
+<ul>
+  {% for word in known_words %}
+  <li>{{ word }}</li>
+  {% endfor %}
+</ul>
+</body>
+</html>
