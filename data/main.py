@@ -44,10 +44,10 @@ data_manager = DataManagement()
 
 
 def main():
-    file_path = "translations.csv"
+    file_path = "../translations.csv"
     if not os.path.exists(file_path):
         # Assuming the translations need to be generated
-        source_file = "tl_full.txt"
+        source_file = "../tl_full.txt"
         df = pd.read_csv(source_file, sep=" ")
         tagalog_words = df.iloc[:, 0].tolist()
         translation_dict = {word: translation_service.translate_word(word) for word in tagalog_words}

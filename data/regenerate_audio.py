@@ -9,7 +9,7 @@ def main():
     load_dotenv()
 
     # Path to the CSV file that contains translations
-    csv_file_path = 'translations.csv'
+    csv_file_path = '../translations.csv'
     # Assuming the CSV has a column 'Tagalog' for the Tagalog words
     df = pd.read_csv(csv_file_path)
 

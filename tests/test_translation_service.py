@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from unittest import TestCase, main
 from unittest.mock import patch
-from translate_service import TranslationService  # Import your actual class
+from data.translate_service import TranslationService  # Import your actual class
 
 
 class TestTranslationService(TestCase):

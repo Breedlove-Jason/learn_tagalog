@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import unittest
 import os
-from tts_service import TextToSpeechService
+from data.tts_service import TextToSpeechService
 
 load_dotenv()
 
