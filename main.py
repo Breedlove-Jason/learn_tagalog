@@ -11,7 +11,6 @@ from data_service import DataManagement
 
 load_dotenv()
 
-<<<<<<< HEAD
 # Access the API key
 API_KEY = os.getenv("GOOGLE_TRANSLATE_API_KEY")
 SERVICE_ACCOUNT = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
@@ -20,34 +19,16 @@ credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCO
 
 client = texttospeech.TextToSpeechClient(credentials=credentials)
 
-
-# FILE = "tl_full.txt"
-# df = pd.read_csv(FILE, sep=" ")
-# tagalog_words = df.iloc[:, 0].tolist()
-# # print(tagalog_words)
-#
-# # Example of translating the first word and printing it
-# english_word = translate_word(tagalog_words[200])
-# print(f"Tagalog: {tagalog_words[200]}, English: {english_word}")
-
-
-# Assuming tagalog_words is already loaded and available
-# translation_dict = create_translation_dict(tagalog_words)
-# save_translations_to_csv(translation_dict, "translations.csv")
-=======
-API_KEY = os.getenv("GOOGLE_TRANSLATE_API_KEY")
-SERVICE_ACCOUNT = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
-
 translation_service = TranslationService(API_KEY)
 tts_service = TextToSpeechService(SERVICE_ACCOUNT)
 data_manager = DataManagement()
 
 
 def main():
-    file_path = "../translations.csv"
+    file_path = "data/translations.csv"
     if not os.path.exists(file_path):
         # Assuming the translations need to be generated
-        source_file = "../tl_full.txt"
+        source_file = "data/wordlist.txt"
         df = pd.read_csv(source_file, sep=" ")
         tagalog_words = df.iloc[:, 0].tolist()
         translation_dict = {word: translation_service.translate_word(word) for word in tagalog_words}
@@ -65,4 +46,3 @@ def main():
 
 if __name__ == '__main__':
     main()
->>>>>>> a91b21e (tagalog audio files, test files)

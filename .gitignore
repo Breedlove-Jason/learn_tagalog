@@ -12,9 +12,9 @@
 .idea/*
 __pycache__/*
 *credentials.json
-*tagalog-translate-tts-e207f8ea23d2.json
-*.env
 
+*.env
+/data/tts-credentials.json
 # AWS User-specific
 .idea/**/aws.xml
 
@@ -246,8 +246,10 @@ cython_debug/
 /oauth-tts-api.json
 /credentials.json
 <<<<<<< HEAD
-!/tagalog-translate-tts-e207f8ea23d2.json
-!/tagalog-translate-tts-e207f8ea23d2.json
+!/data/tts-credentials.json
+!/data/tts-credentials.json
 =======
 /tts_credentials.json
 >>>>>>> a91b21e (tagalog audio files, test files)
+
+data/tts-credentials.json
