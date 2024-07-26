@@ -8,18 +8,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<div class="container py-5">
+<div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card" onclick="flipCard()">
         <div class="card-inner">
             <div class="card-front text-center py-5">
+                <h5 class="languages">Tagalog</h5>
                 <h5 class="card-title">{{ word['Tagalog'] }}</h5>
+                <button class="btn btn-info mt-3" onclick="playAudio()">Play Sound</button>
             </div>
             <div class="card-back text-center py-5">
+                <h5 class="languages">English</h5>
                 <p class="card-text">{{ word['English'] }}</p>
                 <audio id="audioPlayer" src="{{ url_for('static', filename='audio/' ~ word['Tagalog'] ~ '.mp3') }}"></audio>
-                <button class="btn btn-info" onclick="playAudio()">Play Sound</button>
-                <a href="#" class="btn btn-success" onclick="location.href='{{ url_for('next_word', known='true') }}'">Known</a>
-                <a href="#" class="btn btn-danger" onclick="location.href='{{ url_for('next_word', known='false') }}'">Next Card</a>
+                <div class="mt-3">
+                    <a href="#" class="btn btn-success" onclick="location.href='{{ url_for('next_word', known='true') }}'">Known</a>
+                    <a href="#" class="btn btn-danger" onclick="location.href='{{ url_for('next_word', known='false') }}'">Next Card</a>
+                </div>
             </div>
         </div>
     </div>
