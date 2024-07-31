@@ -16,6 +16,12 @@ body {
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
 
+.card-front, .card-back {
+    font-family: 'Permanent Marker', cursive; /* Applying the font */
+    color: white; /* Assuming a chalkboard effect */
+}
+
+
 .card {
     width: 100%;
     max-width: 450px;
